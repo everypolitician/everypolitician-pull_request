@@ -26,7 +26,7 @@ module PullRequestSummarizer
         begin
           ReviewChanges.new(popolo_before_after).to_html
         rescue Octokit::UnprocessableEntity => e
-          raise Error,  "Unable to review pull request #{pull_request_number}: #{e.message}"
+          raise Error, "Unable to review pull request #{pull_request_number}: #{e.message}"
         end
       end
 
