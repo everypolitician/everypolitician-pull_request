@@ -1,13 +1,6 @@
 require 'everypolitician/popolo'
 
-require 'pull_request_summarizer/report/base'
-require 'pull_request_summarizer/report/elections'
-require 'pull_request_summarizer/report/organizations'
-require 'pull_request_summarizer/report/people'
-require 'pull_request_summarizer/report/people_addtional_names'
-require 'pull_request_summarizer/report/people_names'
-require 'pull_request_summarizer/report/terms'
-require 'pull_request_summarizer/report/wikidata'
+require_rel 'report'
 
 module PullRequestSummarizer
   class ComparePopolo
