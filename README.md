@@ -24,7 +24,7 @@ To print a summary of an [everypolitician-data](https://github.com/everypolitici
 
 ```ruby
 require 'everypolitician/pull_request'
-puts Everypolitician::PullRequest::Summarizer.new(16984).summarize
+puts Everypolitician::PullRequest::Summary.new(16984).as_markdown
 ```
 
 Where `16984` is the pull request number in [everypolitician-data](https://github.com/everypolitician/everypolitician-data) that you want the review for.
