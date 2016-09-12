@@ -1,8 +1,8 @@
 require 'test_helper'
 
-describe PullRequestSummarizer::ComparePopolo do
+describe Everypolitician::PullRequest::ComparePopolo do
   subject do
-    PullRequestSummarizer::ComparePopolo.parse(
+    Everypolitician::PullRequest::ComparePopolo.parse(
       path:   'foo/bar.json',
       before: open('test/fixtures/before.json').read,
       after:  open('test/fixtures/after.json').read

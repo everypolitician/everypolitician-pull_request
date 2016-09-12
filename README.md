@@ -1,4 +1,4 @@
-# PullRequestSummarizer
+# EveryPolitician Pull Request summary
 
 Produces a summary of an EveryPolitician data pull request like [this one](https://github.com/everypolitician/everypolitician-data/pull/16984#issuecomment-246282991).
 
@@ -7,7 +7,7 @@ Produces a summary of an EveryPolitician data pull request like [this one](https
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pull_request_summarizer'
+gem 'everypolitician-pull_request'
 ```
 
 And then execute:
@@ -16,15 +16,15 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install pull_request_summarizer
+    $ gem install everypolitician-pull_request
 
 ## Usage
 
 To print a summary of an [everypolitician-data](https://github.com/everypolitician/everypolitician-data) pull request as markdown, use the following:
 
 ```ruby
-require 'pull_request_summarizer'
-puts PullRequestSummarizer::Summarizer.new(16984).summarize
+require 'everypolitician/pull_request'
+puts Everypolitician::PullRequest::Summarizer.new(16984).summarize
 ```
 
 Where `16984` is the pull request number in [everypolitician-data](https://github.com/everypolitician/everypolitician-data) that you want the review for.
@@ -37,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/everypolitician/pull_request_summarizer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/everypolitician/everypolitician-pull_request.
 
 ## License
 
