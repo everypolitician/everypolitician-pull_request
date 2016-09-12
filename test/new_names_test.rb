@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe ReviewChanges do
+describe PullRequestSummarizer::ReviewChanges do
   let(:before_after) do
     [
       {
@@ -38,7 +38,7 @@ describe ReviewChanges do
     ]
   end
 
-  subject { ReviewChanges.new(before_after) }
+  subject { PullRequestSummarizer::ReviewChanges.new(before_after) }
 
   it 'renders the comment template' do
     comment = subject.to_html.split(/^### /).find { |s| s.start_with? 'Additional Name Changes' }

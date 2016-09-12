@@ -1,6 +1,5 @@
 require 'pull_request_summarizer/version'
-require 'require_all'
-require_all 'lib'
+Dir["#{__dir__}/pull_request_summarizer/**/*.rb"].each { |f| require f }
 
 module PullRequestSummarizer
   # Your code goes here...

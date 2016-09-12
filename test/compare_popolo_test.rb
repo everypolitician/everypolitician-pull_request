@@ -1,8 +1,8 @@
 require 'test_helper'
 
-describe ComparePopolo do
+describe PullRequestSummarizer::ComparePopolo do
   subject do
-    ComparePopolo.parse(
+    PullRequestSummarizer::ComparePopolo.parse(
       path:   'foo/bar.json',
       before: open('test/fixtures/before.json').read,
       after:  open('test/fixtures/after.json').read
