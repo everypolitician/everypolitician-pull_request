@@ -1,4 +1,4 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'pull_request_summarizer'
+require 'everypolitician/pull_request'
 
 require 'minitest/autorun'

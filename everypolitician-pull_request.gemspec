@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pull_request_summarizer/version'
+require 'everypolitician/pull_request/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'pull_request_summarizer'
-  spec.version       = PullRequestSummarizer::VERSION
+  spec.name          = 'everypolitician-pull_request'
+  spec.version       = Everypolitician::PullRequest::VERSION
   spec.authors       = ['Chris Mytton']
   spec.email         = ['chrismytton@gmail.com']
 
   spec.summary       = 'Produces a summary of EveryPolitician data pull requests'
-  spec.homepage      = 'https://github.com/everypolitician/pull_request_summarizer'
+  spec.homepage      = 'https://github.com/everypolitician/everypolitician-pull_request'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
