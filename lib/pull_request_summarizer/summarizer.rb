@@ -11,7 +11,7 @@ module PullRequestSummarizer
       @pull_request_number = pull_request_number
     end
 
-    def summarize
+    def summary
       pull_request = github.pull_request(everypolitician_data_repo, pull_request_number)
       files = github.pull_request_files(everypolitician_data_repo, pull_request_number)
       popolo_before_after = FindPopoloFiles.from(files).map do |file|
