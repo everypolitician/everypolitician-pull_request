@@ -15,7 +15,7 @@ module PullRequestSummarizer
     end
 
     def template
-      @template ||= ERB.new(File.read('comment_template.md.erb'))
+      @template ||= ERB.new(File.read(File.expand_path('../../../comment_template.md.erb', __FILE__)))
     end
   end
 end
