@@ -8,10 +8,10 @@ module Everypolitician
 
       def initialize(name = :pull_request_summary)
         @name = name
-        setup_tasks
+        install_tasks
       end
 
-      def setup_tasks
+      def install_tasks
         namespace(name) do
           desc 'Print a summary of the given pull request'
           task :print do
