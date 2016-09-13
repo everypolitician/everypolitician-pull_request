@@ -8,7 +8,6 @@ module Everypolitician
 
       def initialize(name = :pull_request_summary)
         @name = name
-        install_tasks
       end
 
       def install_tasks
