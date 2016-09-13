@@ -29,6 +29,25 @@ puts Everypolitician::PullRequest::Summary.new(16984).as_markdown
 
 Where `16984` is the pull request number in [everypolitician-data](https://github.com/everypolitician/everypolitician-data) that you want the review for.
 
+### Integration with rake
+
+To add the rake tasks put the following in your `Rakefile`:
+
+```ruby
+require 'everypolitician/pull_request/rake_task'
+Everypolitician::PullRequest::RakeTask.new
+```
+
+Then you can run the following tasks:
+
+    bundle exec rake pull_request_summary:print
+    bundle exec rake pull_request_summary:comment
+    bundle exec rake pull_request_summary:travis
+
+For a description of these tasks run:
+
+    bundle exec rake -T
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
