@@ -35,7 +35,7 @@ To add the rake tasks put the following in your `Rakefile`:
 
 ```ruby
 require 'everypolitician/pull_request/rake_task'
-Everypolitician::PullRequest::RakeTask.new
+Everypolitician::PullRequest::RakeTask.new.install_tasks
 ```
 
 Then you can run the following tasks:
