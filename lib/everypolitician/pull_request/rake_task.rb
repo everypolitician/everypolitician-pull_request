@@ -42,7 +42,7 @@ module Everypolitician
         ENV.fetch('PULL_REQUEST')
       rescue KeyError
         abort 'error: Please supply a pull request number in an environment' \
-          'variable, e.g. PULL_REQUEST=16984'
+          ' variable, e.g. PULL_REQUEST=16984'
       end
     end
   end
