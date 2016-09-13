@@ -30,6 +30,26 @@ module Everypolitician
         end
       end
 
+      def post_to_github
+        comment = github.add_comment(
+          everypolitician_data_repo,
+          pull_request_number,
+          as_markdown
+        )
+        puts "Success! Comment posted at #{comment[:html_url]}"
+      rescue Octokit::Unauthorized
+        abort 'unauthorized: Please set GITHUB_ACCESS_TOKEN in the ' \
+          'environment and try again. https://github.com/settings/tokens'
+      end
+
+      def post_to_github_from_travis
+        if pull_request_number && pull_request_number != 'false'
+          post_to_github
+        else
+          warn 'Not building a pull request, skipping pull_request_summary'
+        end
+      end
+
       private
 
       def github
