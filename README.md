@@ -1,8 +1,8 @@
 # EveryPolitician Pull Request summary
 
-This is the code the EverPolitician bot uses to inspect data pull requests (specifically those are on the
+This is the code the EveryPolitician bot uses to inspect data pull requests (specifically those on the
 [everypolitician-data](https://github.com/everypolitician/everypolitician-data) repo)
-and add helpful summaries to them. The bot writes the summary as a comments on the Pull Request
+and add helpful summaries to them. The bot writes the summary as a comment on the Pull Request
 (for example [like this](https://github.com/everypolitician/everypolitician-data/pull/13742#issuecomment-231612271)
 or [this](https://github.com/everypolitician/everypolitician-data/pull/13771#issuecomment-231652178)). The summary
 helps the human who then decides whether or not to merge the data.
