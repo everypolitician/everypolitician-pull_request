@@ -49,6 +49,14 @@ module Everypolitician
         Report::Organizations.new(before, after).removed
       end
 
+      def memberships_added
+        Report::Memberships.new(before, after).added
+      end
+
+      def memberships_removed
+        Report::Memberships.new(before, after).removed
+      end
+
       def terms_added
         Report::Terms.new(before, after).added
       end

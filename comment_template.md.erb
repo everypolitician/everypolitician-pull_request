@@ -78,6 +78,32 @@ No organizations added
 No organizations removed
 <% end %>
 
+## Memberships
+
+### Added
+<% if file.memberships_added.any? %>
+<% file.memberships_added.group_by(&:legislative_period_id).sort_by { |t, _| t }.each do |t, ms| %>
+#### <%= t %>
+<% ms.sort_by { |m| m.person.sort_name }.each do |m| %>
+- <%= m.person.name %> <% if m.start_date || m.end_date %>(<%= m.start_date %> - <%= m.end_date %>)<% end %>
+<% end %>
+<% end %>
+<% else %>
+No memberships added
+<% end %>
+
+### Removed
+<% if file.memberships_removed.any? %>
+<% file.memberships_removed.group_by(&:legislative_period_id).sort_by { |t, _| t }.each do |t, ms| %>
+#### <%= t %>
+<% ms.sort_by { |m| m.person.sort_name }.each do |m| %>
+- <%= m.person.name %> <% if m.start_date || m.end_date %>(<%= m.start_date %> - <%= m.end_date %>)<% end %>
+<% end %>
+<% end %>
+<% else %>
+No memberships removed
+<% end %>
+
 ## Terms
 
 ### Added
