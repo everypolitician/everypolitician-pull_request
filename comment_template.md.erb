@@ -6,82 +6,83 @@ Summary of changes in `<%= file.path %>`:
 
 ## People
 
+<% if file.people_added.any? %>
 ### Added
 
-<% if file.people_added.any? %>
 <% file.people_added.each do |person| %>
 - `<%= person.id %>` - <%= person.name %>
 <% end %>
 <% else %>
-No people added
+* No people added
 <% end %>
 
+<% if file.people_removed.any? %>
 ### Removed
 
-<% if file.people_removed.any? %>
 <% file.people_removed.each do |person| %>
 - `<%= person.id %>` - <%= person.name %>
 <% end %>
 <% else %>
-No people removed
+* No people removed
 <% end %>
 
+<% if file.people_name_changes.any? %>
 ### Name Changes
 
-<% if file.people_name_changes.any? %>
 <% file.people_name_changes.each do |r| %>
 - `<%= r[:id] %>`: <%= r[:was] %> → <%= r[:now] %>
 <% end %>
 <% else %>
-No name changes
+### No name changes
 <% end %>
 
+<% if file.people_additional_name_changes.any? %>
 ### Additional Name Changes
 
-<% if file.people_additional_name_changes.any? %>
 <% file.people_additional_name_changes.each do |r| %>
 - `<%= r[:id] %>` (<%= r[:name] %>): <% if r[:removed].any? %>Removed: <%= r[:removed].join(" ﹠ ") %>. <% end %><% if r[:added].any? %>Added: <%= r[:added].join(" ﹠ ") %>.<% end %>
 <% end %>
 <% else %>
-No name changes
+### No additional name changes
 <% end %>
 
-### Wikidata Changes
 
 <% if file.wikidata_links_changed.any? %>
+### Wikidata Changes
+
 <% file.wikidata_links_changed.each do |r| %>
 - `<%= r[:id] %>`: <%= r[:was] %> → <%= r[:now] %>
 <% end %>
 <% else %>
-No changes
+### No Wikidata Changes
 <% end %>
 
 ## Organizations
 
+<% if file.organizations_added.any? %>
 ### Added
 
-<% if file.organizations_added.any? %>
 <% file.organizations_added.each do |org| %>
 - `<%= org.id %>` - <%= org.name %>
 <% end %>
 <% else %>
-No organizations added
+* No organizations added
 <% end %>
 
+<% if file.organizations_removed.any? %>
 ### Removed
 
-<% if file.organizations_removed.any? %>
 <% file.organizations_removed.each do |org| %>
 - `<%= org.id %>` - <%= org.name %>
 <% end %>
 <% else %>
-No organizations removed
+* No organizations removed
 <% end %>
 
 ## Memberships
 
-### Added
 <% if file.memberships_added.any? %>
+### Added
 <% file.memberships_added.group_by(&:legislative_period_id).sort_by { |t, _| t }.each do |t, ms| %>
 #### <%= t %>
 <% ms.sort_by { |m| m.person.sort_name }.each do |m| %>
@@ -89,11 +90,11 @@ No organizations removed
 <% end %>
 <% end %>
 <% else %>
-No memberships added
+* No memberships added
 <% end %>
 
-### Removed
 <% if file.memberships_removed.any? %>
+### Removed
 <% file.memberships_removed.group_by(&:legislative_period_id).sort_by { |t, _| t }.each do |t, ms| %>
 #### <%= t %>
 <% ms.sort_by { |m| m.person.sort_name }.each do |m| %>
@@ -101,51 +102,51 @@ No memberships added
 <% end %>
 <% end %>
 <% else %>
-No memberships removed
+* No memberships removed
 <% end %>
 
 ## Terms
 
+<% if file.terms_added.any? %>
 ### Added
 
-<% if file.terms_added.any? %>
 <% file.terms_added.each do |term| %>
 - `<%= term.id %>` - <%= term.name %>
 <% end %>
 <% else %>
-No terms added
+* No terms added
 <% end %>
 
+<% if file.terms_removed.any? %>
 ### Removed
 
-<% if file.terms_removed.any? %>
 <% file.terms_removed.each do |term| %>
 - `<%= term.id %>` - <%= term.name %>
 <% end %>
 <% else %>
-No terms removed
+* No terms removed
 <% end %>
 
 ## Elections
 
+<% if file.elections_added.any? %>
 ### Added
 
-<% if file.elections_added.any? %>
 <% file.elections_added.each do |election| %>
 - `<%= election.id %>` - <%= election.name %>
 <% end %>
 <% else %>
-No elections added
+* No elections added
 <% end %>
 
+<% if file.elections_removed.any? %>
 ### Removed
 
-<% if file.elections_removed.any? %>
 <% file.elections_removed.each do |election| %>
 - `<%= election.id %>` - <%= election.name %>
 <% end %>
 <% else %>
-No elections removed
+* No elections removed
 <% end %>
 
 <% end %>
