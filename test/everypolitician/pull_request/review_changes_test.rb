@@ -18,11 +18,13 @@ describe Everypolitician::PullRequest::ReviewChanges do
               classification: 'legislative period',
               id:             'term/52',
               name:           '52nd Parliament of the United Kingdom',
+              start_date:     '1997-05-01',
             },
             {
               classification: 'legislative period',
               id:             'term/53',
               name:           '53rd Parliament of the United Kingdom',
+              start_date:     '2001-06-07',
             },
             {
               classification: 'general election',
@@ -54,11 +56,13 @@ describe Everypolitician::PullRequest::ReviewChanges do
               classification: 'legislative period',
               id:             'term/53',
               name:           '53rd Parliament of the United Kingdom',
+              start_date:     '2001-06-07',
             },
             {
               classification: 'legislative period',
               id:             'term/54',
               name:           '54th Parliament of the United Kingdom',
+              start_date:     '2005-05-05',
             },
             {
               classification: 'general election',
