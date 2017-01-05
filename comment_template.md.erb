@@ -126,26 +126,22 @@ No terms added
 No terms removed
 <% end %>
 
+<% if file.elections_added.any? || file.elections_removed.any? %>
 ## Elections
-
-### Added
+<% end %>
 
 <% if file.elections_added.any? %>
+### Added
 <% file.elections_added.each do |election| %>
 - `<%= election.id %>` - <%= election.name %>
 <% end %>
-<% else %>
-No elections added
 <% end %>
 
-### Removed
-
 <% if file.elections_removed.any? %>
+### Removed
 <% file.elections_removed.each do |election| %>
 - `<%= election.id %>` - <%= election.name %>
 <% end %>
-<% else %>
-No elections removed
 <% end %>
 
 <% end %>
