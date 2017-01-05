@@ -104,26 +104,22 @@ No memberships added
 No memberships removed
 <% end %>
 
+<% if file.terms_added.any? || file.terms_removed.any? %>
 ## Terms
-
-### Added
+<% end %>
 
 <% if file.terms_added.any? %>
+### Added
 <% file.terms_added.each do |term| %>
 - `<%= term.id %>` - <%= term.name %>
 <% end %>
-<% else %>
-No terms added
 <% end %>
 
-### Removed
-
 <% if file.terms_removed.any? %>
+### Removed
 <% file.terms_removed.each do |term| %>
 - `<%= term.id %>` - <%= term.name %>
 <% end %>
-<% else %>
-No terms removed
 <% end %>
 
 <% if file.elections_added.any? || file.elections_removed.any? %>
