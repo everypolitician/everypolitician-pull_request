@@ -13,11 +13,16 @@ module Everypolitician
         private
 
         def before_h
-          @before_h ||= before.memberships.map { |m| [m.document, m] }.to_h
+          @before_h ||= before.memberships.map { |m| [document_without_sources(m.document), m] }.to_h
         end
 
         def after_h
-          @after_h ||= after.memberships.map { |m| [m.document, m] }.to_h
+          @after_h ||= after.memberships.map { |m| [document_without_sources(m.document), m] }.to_h
+        end
+
+        def document_without_sources(doc)
+          doc.delete(:sources)
+          doc
         end
       end
     end
