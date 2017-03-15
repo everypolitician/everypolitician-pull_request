@@ -15,15 +15,11 @@ module Everypolitician
         private
 
         def before_h
-          @before_h ||= before.memberships.map { |m| [filtered_document(m.document), m] }.to_h
+          @before_h ||= before.memberships.map { |m| [m.document.except(:sources), m] }.to_h
         end
 
         def after_h
-          @after_h ||= after.memberships.map { |m| [filtered_document(m.document), m] }.to_h
-        end
-
-        def filtered_document(doc, ignore: %i(sources))
-          doc.except(*ignore)
+          @after_h ||= after.memberships.map { |m| [m.document.except(:sources), m] }.to_h
         end
       end
     end
