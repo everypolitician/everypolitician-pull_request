@@ -44,4 +44,9 @@ describe Everypolitician::PullRequest::ComparePopolo do
   it 'returns the added elections' do
     assert_equal ['Q16960120'], subject.elections_added.map(&:id)
   end
+
+  it 'ignores memberships when only the source url changes' do
+    assert_equal [], subject.memberships_added
+    assert_equal [], subject.memberships_removed
+  end
 end

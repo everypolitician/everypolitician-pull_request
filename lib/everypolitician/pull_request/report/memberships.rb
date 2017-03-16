@@ -1,3 +1,5 @@
+require 'active_support/core_ext/hash'
+
 module Everypolitician
   module PullRequest
     class Report
@@ -13,11 +15,11 @@ module Everypolitician
         private
 
         def before_h
-          @before_h ||= before.memberships.map { |m| [m.document, m] }.to_h
+          @before_h ||= before.memberships.map { |m| [m.document.except(:sources), m] }.to_h
         end
 
         def after_h
-          @after_h ||= after.memberships.map { |m| [m.document, m] }.to_h
+          @after_h ||= after.memberships.map { |m| [m.document.except(:sources), m] }.to_h
         end
       end
     end

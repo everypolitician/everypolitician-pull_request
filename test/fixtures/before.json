@@ -48,5 +48,18 @@
       "name": "Abkhazian parliamentary election, 1996",
       "start_date": "1996-11-23"
     }
+  ],
+  "memberships": [
+    {
+      "person_id": "ef41232b-daa4-40fd-a39f-1ff900e3b1c2",
+      "organization_id": "4d814738-39d3-4a09-835d-32a2ed47c3c3",
+      "legislative_period_id": "term/52",
+      "role": "member",
+      "sources": [
+        {
+          "url": "http://example.com/members/123"
+        }
+      ]
+    }
   ]
 }
