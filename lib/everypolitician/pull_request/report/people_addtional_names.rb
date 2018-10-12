@@ -1,3 +1,5 @@
+require_relative 'people_names'
+
 module Everypolitician
   module PullRequest
     class Report
