@@ -5,11 +5,11 @@ module Everypolitician
     class Report
       class PeopleNames < Base
         def before_names
-          @name_hash_pre ||= Hash[before.persons.map { |p| [p.id, p.name] }]
+          @before_names ||= Hash[before.persons.map { |p| [p.id, p.name] }]
         end
 
         def after_names
-          @name_hash_post ||= Hash[after.persons.map { |p| [p.id, p.name] }]
+          @after_names ||= Hash[after.persons.map { |p| [p.id, p.name] }]
         end
 
         def changed
