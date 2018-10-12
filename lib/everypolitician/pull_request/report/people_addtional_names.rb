@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require_relative 'people_names'
+
 module Everypolitician
   module PullRequest
     class Report
@@ -10,7 +14,7 @@ module Everypolitician
           names_all_pre =  Hash[before.persons.map { |p| [p.id, all_names.call(p)] }]
           names_all_post = Hash[after.persons.map  { |p| [p.id, all_names.call(p)] }]
           in_both = names_all_pre.keys & names_all_post.keys
-          in_both.select { |id| names_all_pre[id] != names_all_post[id] }.map do |id|
+          in_both.reject { |id| names_all_pre[id] == names_all_post[id] }.map do |id|
             {
               id:      id,
               name:    before_names[id],

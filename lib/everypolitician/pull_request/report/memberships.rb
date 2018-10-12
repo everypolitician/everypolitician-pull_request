@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/core_ext/hash'
 
 module Everypolitician
@@ -5,11 +7,11 @@ module Everypolitician
     class Report
       class Memberships < Base
         def added
-          @ma ||= (after_h.keys - before_h.keys).map { |k| after_h[k] }
+          @added ||= (after_h.keys - before_h.keys).map { |k| after_h[k] }
         end
 
         def removed
-          @mr ||= (before_h.keys - after_h.keys).map { |k| before_h[k] }
+          @removed ||= (before_h.keys - after_h.keys).map { |k| before_h[k] }
         end
 
         private
