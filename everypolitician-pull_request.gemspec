@@ -1,5 +1,6 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'everypolitician/pull_request/version'
 
@@ -20,10 +21,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.3.0'
 
-  spec.add_runtime_dependency 'everypolitician-popolo'
-  spec.add_runtime_dependency 'require_all'
-  spec.add_runtime_dependency 'octokit'
   spec.add_runtime_dependency 'activesupport'
+  spec.add_runtime_dependency 'everypolitician-popolo'
+  spec.add_runtime_dependency 'octokit'
+  spec.add_runtime_dependency 'require_all'
 
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'minitest', '~> 5.0'

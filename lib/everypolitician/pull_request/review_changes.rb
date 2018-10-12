@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'erb'
 
 module Everypolitician
@@ -16,7 +18,7 @@ module Everypolitician
       end
 
       def template
-        @template ||= ERB.new(File.read(File.expand_path('../../../../comment_template.md.erb', __FILE__)))
+        @template ||= ERB.new(File.read(File.expand_path('../../../comment_template.md.erb', __dir__)))
       end
     end
   end

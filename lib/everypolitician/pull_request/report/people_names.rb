@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Everypolitician
   module PullRequest
     class Report
@@ -12,7 +14,7 @@ module Everypolitician
 
         def changed
           in_both = before_names.keys & after_names.keys
-          in_both.select { |id| !before_names[id].casecmp(after_names[id].downcase).zero? }.map do |id|
+          in_both.reject { |id| before_names[id].casecmp(after_names[id].downcase).zero? }.map do |id|
             {
               id:  id,
               was: before_names[id],
