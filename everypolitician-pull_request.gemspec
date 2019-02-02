@@ -7,8 +7,8 @@ require 'everypolitician/pull_request/version'
 Gem::Specification.new do |spec|
   spec.name          = 'everypolitician-pull_request'
   spec.version       = Everypolitician::PullRequest::VERSION
-  spec.authors       = ['Chris Mytton']
-  spec.email         = ['chrismytton@gmail.com']
+  spec.authors       = ['Chris Mytton', 'Tony Bowden']
+  spec.email         = ['team@everypolitician.org']
 
   spec.summary       = 'Produces a summary of EveryPolitician data pull requests'
   spec.homepage      = 'https://github.com/everypolitician/everypolitician-pull_request'
