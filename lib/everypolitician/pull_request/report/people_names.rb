@@ -14,7 +14,7 @@ module Everypolitician
 
         def changed
           in_both = before_names.keys & after_names.keys
-          in_both.reject { |id| before_names[id].casecmp(after_names[id].downcase).zero? }.map do |id|
+          in_both.reject { |id| before_names[id].casecmp?(after_names[id]) }.map do |id|
             {
               id:  id,
               was: before_names[id],
