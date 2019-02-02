@@ -12,6 +12,7 @@ describe Everypolitician::PullRequest::ReviewChanges do
             { id: '135', name: 'Bob'   },
             { id: '147', name: 'Carol' },
             { id: '159', name: 'Derek' },
+            { id: '301', name: 'Zoë'   },
           ],
           organizations: [
             { id: 'abc', name: 'Rouge' },
@@ -24,6 +25,7 @@ describe Everypolitician::PullRequest::ReviewChanges do
             { id: '135', name: 'Bobby'    },
             { id: '147', name: 'Caroline' },
             { id: '169', name: 'Derek'    },
+            { id: '301', name: 'ZOË'      },
           ],
           organizations: [
             { id: 'abc', name: 'Red'   },
@@ -36,11 +38,14 @@ describe Everypolitician::PullRequest::ReviewChanges do
     ]
   end
 
-  subject { Everypolitician::PullRequest::ReviewChanges.new(before_after) }
+  subject { Everypolitician::PullRequest::ReviewChanges.new(before_after).to_html }
 
-  it 'renders the comment template' do
-    comment = subject.to_html
-    assert comment.include?('- `135`: Bob → Bobby')
-    assert comment.include?('- `147`: Carol → Caroline')
+  it 'knows about name changes' do
+    assert subject.include?('- `135`: Bob → Bobby')
+    assert subject.include?('- `147`: Carol → Caroline')
+  end
+
+  it 'ignores changes only in case' do
+    refute subject.include?('ZOË')
   end
 end
