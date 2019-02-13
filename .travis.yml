@@ -5,7 +5,9 @@ rvm:
   - 2.3
   - 2.4
   - 2.5
-before_install: gem install bundler -v 1.12.5
+before_install:
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v 1.12.5
 script:
   - bundle exec rake
   - bash <(curl -fsSL https://github.com/everypolitician/ensure-regression-tests/raw/master/ensure-regression-tests)
