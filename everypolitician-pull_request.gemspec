@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'activesupport'
   spec.add_runtime_dependency 'everypolitician-popolo'
-  spec.add_runtime_dependency 'octokit'
+  spec.add_runtime_dependency 'octokit', '~> 4.13'
   spec.add_runtime_dependency 'require_all'
 
   spec.add_development_dependency 'bundler', '~> 1.12'
